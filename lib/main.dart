@@ -31,7 +31,7 @@ class WarrantyHome extends StatefulWidget {
 }
 
 class _WarrantyHomeState extends State<WarrantyHome> {
-   int currentIndex = 0;
+   int _currentIndex = 0;
 
   final List<Widget> screens = [
     HomeScreen(),
@@ -43,11 +43,11 @@ class _WarrantyHomeState extends State<WarrantyHome> {
   @override
   Widget build(BuildContext context) {
     return  Scaffold(
-      body: screens[currentIndex],
+      body: screens[_currentIndex],
       bottomNavigationBar: NavigationBar(
-        selectedIndex:currentIndex,
+        selectedIndex:_currentIndex,
         onDestinationSelected: (index){
-          setState(()=> currentIndex = index);
+          setState(()=> _currentIndex = index);
         },
         destinations: [
           NavigationDestination(icon: Icon(Icons.home), label: 'Home'),
